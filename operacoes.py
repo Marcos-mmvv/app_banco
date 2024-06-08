@@ -1,4 +1,26 @@
 
+def cad():
+     print(f'{'-'*30} Seja bem vindo ao app Senai Bank {'-'*30}')
+     print('1 - Para acessar o APP')
+     print('2 - Remover acesso ao APP')
+     print()
+
+def cadastro(entrada):
+     entrada = entrada
+     return entrada
+
+def apagar(entrada):
+     entrada = entrada.remove(entrada)
+
+def menu():
+    print(f'{'-'*30} APP Senai Bank {'-'*30}\n')
+    print('1. Criar conta')
+    print('2. Exibir dados da conta')
+    print('3. Depositar valor')
+    print('4. Sacar valor')
+    print('5. Encerrar conta')
+    print('6. Sair do programa')
+
 class conta_corrente:
     def __init__(self, nome, cpf):
         self.nome = nome
@@ -33,13 +55,6 @@ def criar_conta():
     cpf = input('Informe o seu CPF: ')
     return conta_corrente(nome, cpf)
 
-def menu():
-    print(f'{'-'*30} Escolha uma opção {'-'*30}\n')
-    print('1. Criar conta')
-    print('2. Exibir dados da conta')
-    print('3. Depositar valor')
-    print('4. Sacar valor')
-    print('5. Encerrar conta')
-    print('6. Sair do programa')
+
 
    
