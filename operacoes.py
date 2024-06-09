@@ -1,45 +1,42 @@
+# importa função de data
+from datetime import date
 
-class conta_corrente:
-    def __init__(self, nome, cpf):
-        self.nome = nome
-        self.cpf = cpf
-        self.saldo = 0.0
+# função exibir o menu
+def exibir_menu():
+    dia = date.today().day
+    mes = date.today().month
+    ano = date.today().year
 
-    def depositar(self, valor):
-            if valor > 0:
-                self.saldo += valor
-                print('Depósito de R$ {:.2f} realizado com sucesso.'.format(valor))
-            else:
-                print('Valor inválido.')
+    print(f'\n{'=' * 20} | PYTHON BANK |  {'=' * 20}')
+    print(f'\n{'=' * 23} {dia}/{mes}/{ano} {'=' * 25}\n')
+    print('1 - Criar conta')
+    print('2 - Entrar na conta')
+    print('3 - Exibir correntistas')
+    print('4 - Encerrar conta')
+    print('5 - Encerrar programa')
 
-    def sacar(self, valor):
-            if valor > 0 and self.saldo >= valor:
-                self.saldo -= valor
-                print('Saque de R$ {:.2f} realizado com sucesso.'.format(valor))
-            else:
-                print('Saldo insuficiente.')
+# função exibir operações
+def exibir_operacoes():
+    print('\nOPERAÇÕES\n')
+    print('1 - Consultar saldo')
+    print('2 - Depositar valor')
+    print('3 - Sacar valor')
+    print('4 - Voltar')
 
-    def exibir_dados(self):
-            print('Nome: {}'.format(self.nome))
-            print('CPF: {}'.format(self.cpf))
-            print('Saldo: R$ {:.2f}'.format(self.saldo))
+# função exibir dados do correntista
+def exibir_dados(nome, i, saldo):
+    print(f'ID: {i}')
+    print(f'Nome: {nome}')
+    print(f'Agência: 1001')
+    print(f'Conta: 1001{i}')
+    print(f'Saldo: R$ {saldo}')
 
-    def encerrar_conta(self):
-            self.saldo = 0.0
-            print('Conta encerrada.')
+# função de depósito
+def depositar_valor(saldo, valor):
+    saldo += valor
+    return saldo
 
-def criar_conta():
-    nome = input('Informe seu nome completo: ')
-    cpf = input('Informe o seu CPF: ')
-    return conta_corrente(nome, cpf)
-
-def menu():
-    print(f'{'-'*30} Escolha uma opção {'-'*30}\n')
-    print('1. Criar conta')
-    print('2. Exibir dados da conta')
-    print('3. Depositar valor')
-    print('4. Sacar valor')
-    print('5. Encerrar conta')
-    print('6. Sair do programa')
-
-   
+# função de saque
+def sacar_valor(saldo, valor):
+    saldo -= valor
+    return saldo
