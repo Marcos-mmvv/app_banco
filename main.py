@@ -2,6 +2,7 @@
 import os
 from operacoes import *
 
+
 # programa principal
 if __name__ == '__main__':
     # lista de dicionários

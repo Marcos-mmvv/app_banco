@@ -1,6 +1,7 @@
 # importa função de data
 from datetime import date
 
+
 # função exibir o menu
 def exibir_menu():
     dia = date.today().day
